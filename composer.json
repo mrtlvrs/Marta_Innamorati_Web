@@ -1,0 +1,32 @@
+{
+    "name": "martainnamorati/crochet-hub",
+    "autoload": {
+        "psr-4": {
+            "Controller\\": "src/Controller/",
+            "Entity\\": "src/Entity/",
+            "Foundation\\": "src/Foundation/",
+            "Utility\\": "src/Utility/",
+            "View\\": "src/View/"
+        }
+    },
+    "authors": [
+        {
+            "name": "mrtlvrs",
+            "email": "marta.innamorati@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "doctrine/orm": "^2.15",
+        "doctrine/dbal": "^3.5",
+        "doctrine/migrations": "^3.5",
+        "symfony/cache": "^5.4",
+        "symfony/var-exporter": "^5.4",
+        "smarty/smarty": "^4.3"
+    },
+    "config": {
+        "platform": {
+            "php": "8.2.0"
+        }
+    }
+}
