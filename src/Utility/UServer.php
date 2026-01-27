@@ -1,0 +1,55 @@
+<?php
+
+namespace Utility;
+
+//È una classe di utilità che incapsula l’accesso alla superglobale $_SERVER, permettendo di recuperare informazioni sulla richiesta HTTP in modo controllato
+class UServer
+{
+    /**
+     * Singleton instance
+     */
+    private static ?UServer $instance = null;
+
+    public static function getInstance(): ?UServer
+    {
+        if (self::$instance === null) {
+            self::$instance = new self();
+        }
+
+        return self::$instance;
+    }
+
+    /**
+     * Get the request method of the server (e.g., POST, GET, etc.)
+     * @return string|null
+     */
+    public static function getRequestMethod(): ?string
+    {
+        return $_SERVER['REQUEST_METHOD'] ?? null; // if the REQUEST_METHOD is not set, it returns null
+    }
+
+    /**
+     * Get the client ip or null
+     * @return string|null
+     */
+    public static function getClientIP(): ?string
+    {
+        if ($_SERVER['REMOTE_ADDR'] === null) { // if the request is not managed by the server
+            // if there is a proxy, it will add into the HTTP header the real IP address of the client with 'X_FORWARDED_FOR'
+            // this is useful when the server receives messages from a reverse proxy or load balancer
+            return $_SERVER['HTTP_X_FORWARDED_FOR'] ?? null;
+        } else {
+            return $_SERVER['REMOTE_ADDR']; // it refers to the IP address of the client that made the request
+        }
+    }
+
+    /**
+     * Get a value from the SERVER array
+     * @param string $key
+     * @return mixed|null
+     */
+    public static function getValue(string $key): mixed
+    {
+        return $_SERVER[$key] ?? null;
+    }
+}
