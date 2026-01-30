@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.5.6, created on 2026-01-26 11:59:42
+/* Smarty version 4.5.6, created on 2026-01-30 11:48:41
   from '/Applications/XAMPP/xamppfiles/htdocs/CrochetHub/src/Smarty/templates/sidebar.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.5.6',
-  'unifunc' => 'content_6977491e141683_08679512',
+  'unifunc' => 'content_697c8c891ca8c6_58794628',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd13c40a47235e8df8ee2e0383d565ad64c153016' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/CrochetHub/src/Smarty/templates/sidebar.tpl',
-      1 => 1769425178,
+      1 => 1769770116,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6977491e141683_08679512 (Smarty_Internal_Template $_smarty_tpl) {
+function content_697c8c891ca8c6_58794628 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div id="sidebar" class="inactive">
     <div class="inner">
 
@@ -31,7 +31,7 @@ function content_6977491e141683_08679512 (Smarty_Internal_Template $_smarty_tpl)
 
             <ul>
                 <li><h3>  <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-">Home </a></h3></li>
+/home?reset=1">Home </a></h3></li>
                 <li><h3>  <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
 /profile">Profilo </a></h3></li>
                 <li><h3>  <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>

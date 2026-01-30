@@ -51,16 +51,13 @@ class FPersistentManager
         return $this->em->findbyId(ECreation::class, $id);
     }
 
-    //ritornano liste in ordine crescente
-    public function findAllCreations(): array
-    {
-        return $this->em->findAllOrdered(ECreation::class, ['createdAt' => 'DESC']);
-    }
-
     public function findAllUsers(): array
     {
         return $this->em->findAllOrdered(EUser::class, ['createdAt' => 'DESC']);
     }
+
+
+    // -------------- MATERIALI ------------
 
     //metodi find per i materiali, per la vista utente ritorna solo quelli attivi, per l'admin li ritorna tutti
     private function findMaterials(string $entityClass, string $orderField, bool $onlyActive = true): array
@@ -118,6 +115,13 @@ class FPersistentManager
         return $this->findMaterials(ECategory::class, 'name', false);
     }
 
+    // ------------ CREAZIONI -------------
+
+    //ritornano liste in ordine crescente
+    public function findAllCreations(): array
+    {
+        return $this->em->findAllOrdered(ECreation::class, ['createdAt' => 'DESC']);
+    }
 
     //GESTIONE DEI FILTRI (possono essere accorpati)
 
@@ -269,6 +273,10 @@ class FPersistentManager
         return (int) $this->em->scalar($dql, $params);
     }
     
+
+
+    // ----------- SALVATI------------
+
     // conta il numero totale di creazioni salvate da un utente
     public function countSavedCreations(EUser $user): int
     {
@@ -296,6 +304,9 @@ class FPersistentManager
         return $this->em->query($dql, ['user' => $user], $limit, $offset);
     }
 
+
+
+    // --------- COMMENTI ----------
 
     //gestione commenti creazioni, li pagina in base ad un certo limite
     public function findCommentsByCreation(ECreation $creation, int $limit, int $offset): array

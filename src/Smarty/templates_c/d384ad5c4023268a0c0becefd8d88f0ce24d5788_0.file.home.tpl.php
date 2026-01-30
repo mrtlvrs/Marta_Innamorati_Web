@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.5.6, created on 2026-01-30 11:53:09
-  from '/Applications/XAMPP/xamppfiles/htdocs/CrochetHub/src/Smarty/templates/home.tpl' */
+/* Smarty version 4.5.6, created on 2026-01-28 21:42:18
+  from '/Applications/XAMPP/xamppfiles/htdocs/crochethub/src/Smarty/templates/home.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.5.6',
-  'unifunc' => 'content_697c8d95b50219_47595747',
+  'unifunc' => 'content_697a74aa90f6a7_03593267',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '73357060b4d5ca68490c3d2c93017fa6dcdb2d6a' => 
+    'd384ad5c4023268a0c0becefd8d88f0ce24d5788' => 
     array (
-      0 => '/Applications/XAMPP/xamppfiles/htdocs/CrochetHub/src/Smarty/templates/home.tpl',
-      1 => 1769770385,
+      0 => '/Applications/XAMPP/xamppfiles/htdocs/crochethub/src/Smarty/templates/home.tpl',
+      1 => 1769509834,
       2 => 'file',
     ),
   ),
@@ -20,54 +20,31 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_697c8d95b50219_47595747 (Smarty_Internal_Template $_smarty_tpl) {
+function content_697a74aa90f6a7_03593267 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
-<?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1558486771697c8d95b24822_57709280', "scripts");
-?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_49215991697c8d95b26b57_29365630', "content");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1951029841697a74aa8d22f7_76920135', "content");
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, "layout.tpl");
 }
-/* {block "scripts"} */
-class Block_1558486771697c8d95b24822_57709280 extends Smarty_Internal_Block
-{
-public $subBlocks = array (
-  'scripts' => 
-  array (
-    0 => 'Block_1558486771697c8d95b24822_57709280',
-  ),
-);
-public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
-?>
-
-    <?php echo '<script'; ?>
- src="<?php echo $_smarty_tpl->tpl_vars['BASE_PUBLIC']->value;?>
-/js/home.js"><?php echo '</script'; ?>
->
-<?php
-}
-}
-/* {/block "scripts"} */
 /* {block "content"} */
-class Block_49215991697c8d95b26b57_29365630 extends Smarty_Internal_Block
+class Block_1951029841697a74aa8d22f7_76920135 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_49215991697c8d95b26b57_29365630',
+    0 => 'Block_1951029841697a74aa8d22f7_76920135',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->_checkPlugins(array(0=>array('file'=>'/Applications/XAMPP/xamppfiles/htdocs/CrochetHub/vendor/smarty/smarty/libs/plugins/modifier.count.php','function'=>'smarty_modifier_count',),));
+$_smarty_tpl->_checkPlugins(array(0=>array('file'=>'/Applications/XAMPP/xamppfiles/htdocs/crochethub/vendor/smarty/smarty/libs/plugins/modifier.count.php','function'=>'smarty_modifier_count',),));
 ?>
 
 

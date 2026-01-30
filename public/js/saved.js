@@ -5,7 +5,7 @@ document.addEventListener('click', async function (e) {
     const link = e.target.closest('.pagination a');
     if (!link) return;
 
-    //solo nella pagina /save
+    //solo nella pagina /saved
     if (!window.location.pathname.includes('/saved')) return;
 
     //blocca il comportamento nativo, cioè il browser non ricarica la pagina

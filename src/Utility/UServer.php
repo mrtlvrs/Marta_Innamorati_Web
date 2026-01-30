@@ -32,16 +32,16 @@ class UServer
      * Get the client ip or null
      * @return string|null
      */
-    public static function getClientIP(): ?string
-    {
-        if ($_SERVER['REMOTE_ADDR'] === null) { // if the request is not managed by the server
-            // if there is a proxy, it will add into the HTTP header the real IP address of the client with 'X_FORWARDED_FOR'
-            // this is useful when the server receives messages from a reverse proxy or load balancer
-            return $_SERVER['HTTP_X_FORWARDED_FOR'] ?? null;
-        } else {
-            return $_SERVER['REMOTE_ADDR']; // it refers to the IP address of the client that made the request
-        }
-    }
+    // public static function getClientIP(): ?string
+    // {
+    //     if ($_SERVER['REMOTE_ADDR'] === null) { // if the request is not managed by the server
+    //         // if there is a proxy, it will add into the HTTP header the real IP address of the client with 'X_FORWARDED_FOR'
+    //         // this is useful when the server receives messages from a reverse proxy or load balancer
+    //         return $_SERVER['HTTP_X_FORWARDED_FOR'] ?? null;
+    //     } else {
+    //         return $_SERVER['REMOTE_ADDR']; // it refers to the IP address of the client that made the request
+    //     }
+    // }
 
     /**
      * Get a value from the SERVER array

@@ -7,7 +7,7 @@
             </header>
 
             <ul>
-                <li><h3>  <a href="{$BASE_URL}">Home </a></h3></li>
+                <li><h3>  <a href="{$BASE_URL}/home?reset=1">Home </a></h3></li>
                 <li><h3>  <a href="{$BASE_URL}/profile">Profilo </a></h3></li>
                 <li><h3>  <a href="{$BASE_URL}/saved">Salvati </a></h3></li>
             </ul>

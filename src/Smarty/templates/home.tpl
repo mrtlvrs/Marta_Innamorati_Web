@@ -4,7 +4,6 @@
     <script src="{$BASE_PUBLIC}/js/home.js"></script>
 {/block}
 
-
 {block name="content"}
 
 {if $isLogged}

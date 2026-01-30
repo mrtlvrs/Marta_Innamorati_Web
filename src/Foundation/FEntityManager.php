@@ -93,7 +93,7 @@ class FEntityManager
         return $query->getResult();
     }
 
-    //conta quante enity soddisfano una certa condizione (usato per la paginazione)
+    //conta quante entity soddisfano una certa condizione (usato per la paginazione)
     public function scalar(string $dql, array $params = []): mixed
     {
         $query = $this->em->createQuery($dql);

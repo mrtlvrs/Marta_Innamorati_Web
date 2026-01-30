@@ -12,13 +12,14 @@ class UHTTPMethods
         return $_POST[$param];
     }
 
+    //numero variabile di parametri in ingresso
     public static function files(...$param)
     {
-        if (count($param)  == 1) return $_FILES[$param[0]];
-        else if (count($param) == 2) return $_FILES[$param[0]][$param[1]];
-        else if (count($param) == 3) return $_FILES[$param[0]][$param[1]][$param[2]];
-        else if (count($param) == 4) return $_FILES[$param[0]][$param[1]][$param[2]][$param[3]];
-        else return $_FILES[$param[0]][$param[1]][$param[2]][$param[3]][$param[4]];
+        if (count($param)  == 1) return $_FILES[$param[0]];     //restituisce tutto il file
+        else if (count($param) == 2) return $_FILES[$param[0]][$param[1]];      //restituisce un campo di un file
+        else if (count($param) == 3) return $_FILES[$param[0]][$param[1]][$param[2]];  //gestione input multipli
+        //else if (count($param) == 4) return $_FILES[$param[0]][$param[1]][$param[2]][$param[3]];
+        //else return $_FILES[$param[0]][$param[1]][$param[2]][$param[3]][$param[4]];
     }
 }
 

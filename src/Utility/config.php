@@ -8,7 +8,7 @@ define('DB_NAME', 'crochethub');
 define('DRIVER', 'pdo_mysql');
 
 //base url, per usare solo path relativi
-define('BASE_URL', '/CrochetHub/public/index.php');
+define('BASE_URL', '/CrochetHub/index.php');
 define('BASE_PUBLIC', '/CrochetHub/public');
 
 //session cookie expiration

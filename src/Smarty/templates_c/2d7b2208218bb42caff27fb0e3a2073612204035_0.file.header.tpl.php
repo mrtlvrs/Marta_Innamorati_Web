@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.5.6, created on 2026-01-26 17:01:00
+/* Smarty version 4.5.6, created on 2026-01-27 10:30:42
   from '/Applications/XAMPP/xamppfiles/htdocs/crochethub/src/Smarty/templates/header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.5.6',
-  'unifunc' => 'content_69778fbc13a2e5_04161504',
+  'unifunc' => 'content_697885c2ce0d20_55696463',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2d7b2208218bb42caff27fb0e3a2073612204035' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/crochethub/src/Smarty/templates/header.tpl',
-      1 => 1768903757,
+      1 => 1769501905,
       2 => 'file',
     ),
   ),
@@ -20,10 +20,10 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_69778fbc13a2e5_04161504 (Smarty_Internal_Template $_smarty_tpl) {
+function content_697885c2ce0d20_55696463 (Smarty_Internal_Template $_smarty_tpl) {
 ?><header id="header">
     <a href="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-/home" class="logo">
+/home?reset=1" class="logo">
         <strong>CrochetHub</strong>
     </a>
 

@@ -114,7 +114,7 @@
                 <li>
                     <form method="post" action="{$BASE_URL}/creationDelete/{$creation.id}">
                         <input type="hidden" name="id" value="{$creation.id}">
-                        <button type="submit" class="button small danger"
+                        <button type="submit" class="button small"
                         onclick="return confirm('Eliminare definitivamente questa creazione?');">
                             Elimina
                         </button>

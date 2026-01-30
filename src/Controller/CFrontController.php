@@ -67,10 +67,10 @@ class CFrontController
         $uri  = UServer::getValue('REQUEST_URI') ?? '';     //path richiesto dal browser
         $path = parse_url($uri, PHP_URL_PATH) ?? '/';       //prende solo il path senza ?a=b...
 
-        $scriptName = UServer::getValue('SCRIPT_NAME') ?? '';       //path del file php che apache ha eseguito per gestire la richiesta
+        $scriptName = UServer::getValue('SCRIPT_NAME') ?? '';       //path del file php che apache ha eseguito per gestire la richiesta (/CrochetHub)
         $baseDir = rtrim(str_replace('\\', '/', dirname($scriptName)), '/');    //replace di backslash
 
-        // Rimuove il base path dalla richiesta se presente
+        // Rimuove il baseDir dalla richiesta se presente
         if ($baseDir !== '' && $baseDir !== '/' && str_starts_with($path, $baseDir)) {
             $path = substr($path, strlen($baseDir));
         }
@@ -97,7 +97,7 @@ class CFrontController
 
         //recupera controller e metodo nella tabella delle rotte
         [$controller, $method] = self::$routes[$routeKey];
-        $controllerInstance = new $controller();
+        $controllerInstance = new $controller();    //contiene un oggetto controller giusto per la rotta corrente
 
         if (!class_exists($controller) || !method_exists($controller, $method)) {
             $this->notFound();

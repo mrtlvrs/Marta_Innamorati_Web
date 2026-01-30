@@ -147,7 +147,7 @@ class CCreation
             USession::setSessionElement('lastCreationId', $creation->getId());  //salva l'ultima creazione vista dall'utente in sessione
         }
 
-        USession::setSessionElement('redirect', UServer::getValue('REQUEST_URI'));      //salva l'ultima pagina visitata per redirect (qui serve se l'utente prova a commentare)
+        USession::setSessionElement('redirect', UServer::getValue('REQUEST_URI'));      //salva l'ultima pagina visitata per redirect (qui serve se l'utente prova a commentare o mette like)
 
         //SIDEBAR
         $sidebar = USidebarContext::get();

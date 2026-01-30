@@ -111,6 +111,7 @@ class CHome
         //se l'utente è loggato lo salva in context user
         $user = CUser::isLogged() ? CUser::getLoggedUser() : null;
 
+        //contextUser contiene l'utente solo se è loggato e solo se è in Per te
         if ($mode === 'following') {
             $contextUser = $user;
         } else {

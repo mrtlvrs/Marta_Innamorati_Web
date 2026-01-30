@@ -60,7 +60,7 @@ class CUser
             $redirect = USession::getSessionElement('redirect');
 
             if ($redirect) {
-                USession::unsetSessionElement('redirect');
+                USession::unsetSessionElement('redirect');  //altrimenti un utente al prossimo accesso potrebbe essere rimandato in una pagina vecchia
                 header('Location: ' . $redirect);
             } else {
                 header('Location: ' . BASE_URL . '/home');
@@ -127,7 +127,19 @@ class CUser
             
             //login automatico dopo la registrazione
             USession::getInstance();
+            USession::regenerateId(); 
             USession::setSessionElement('user_id', $user->getId());
+
+            $redirect = USession::getSessionElement('redirect');
+            var_dump(USession::getSessionElement('redirect'));
+
+            if ($redirect) {
+                USession::unsetSessionElement('redirect');      //altrimenti un utente al prossimo accesso potrebbe essere rimandato in una pagina vecchia
+                header('Location: ' . $redirect);
+            } else {
+                header('Location: ' . BASE_URL . '/home');
+            }
+            exit; 
 
             header('Location: ' . BASE_URL . '/home');
             exit;
@@ -349,7 +361,7 @@ class CUser
 
 
 
-    //salva i dati che arrivato dal form di modifica del profilo
+    //salva i dati che arrivano dal form di modifica del profilo
     public static function save(): void
     {
         //senza redirect perché save non è una pagina
@@ -385,7 +397,9 @@ class CUser
         }
 
         //se l'utente ha cambiato il proprio avatar
-        if (!$removeAvatar && isset($_FILES['avatar']) && $_FILES['avatar']['error'] === UPLOAD_ERR_OK && is_uploaded_file($_FILES['avatar']['tmp_name']))
+        $file = UHTTPMethods::files('avatar');
+
+        if (!$removeAvatar && $file && $file['error'] === UPLOAD_ERR_OK && is_uploaded_file($file['tmp_name']))
         {
             // elimina avatar precedente se presente
             $oldAvatar = $user->getAvatarPath();
@@ -399,18 +413,18 @@ class CUser
             //percorso su disco
             $uploadDir = __DIR__ . '/../../public/uploads/avatars';
 
-            //crea la directory se non esiste
+            //crea la directory avatars se non esiste
             if (!is_dir($uploadDir)) {
                 mkdir($uploadDir, 0755, true);
             }
 
-            $extension = pathinfo($_FILES['avatar']['name'], PATHINFO_EXTENSION);
+            $extension = pathinfo($file['name'], PATHINFO_EXTENSION);
             $filename = 'avatar_' . $user->getId() . '.' . $extension;
 
             $absolutePath = $uploadDir . '/' . $filename;
             $relativePath = 'uploads/avatars/' . $filename; //da salvare nel db
 
-            move_uploaded_file($_FILES['avatar']['tmp_name'], $absolutePath);   //sposta il file
+            move_uploaded_file($file['tmp_name'], $absolutePath);   //sposta il file
             if (!file_exists($absolutePath)) {
                 die('Errore nel salvataggio dell’avatar');
             }
@@ -420,7 +434,11 @@ class CUser
 
         $pm->save($user);
 
-        header('Location: ' . BASE_URL . '/profile');
+        if ($removeAvatar) {
+            header('Location: ' . BASE_URL . '/profileEdit');
+        } else {
+            header('Location: ' . BASE_URL . '/profile');
+        }
         exit;
     }
 }

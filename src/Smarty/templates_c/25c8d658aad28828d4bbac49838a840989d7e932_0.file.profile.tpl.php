@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.5.6, created on 2026-01-26 11:49:19
+/* Smarty version 4.5.6, created on 2026-01-30 11:46:21
   from '/Applications/XAMPP/xamppfiles/htdocs/CrochetHub/src/Smarty/templates/profile.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.5.6',
-  'unifunc' => 'content_697746af79f490_41785891',
+  'unifunc' => 'content_697c8bfd5f43f5_13553122',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '25c8d658aad28828d4bbac49838a840989d7e932' => 
     array (
       0 => '/Applications/XAMPP/xamppfiles/htdocs/CrochetHub/src/Smarty/templates/profile.tpl',
-      1 => 1769382610,
+      1 => 1769769978,
       2 => 'file',
     ),
   ),
@@ -20,23 +20,23 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_697746af79f490_41785891 (Smarty_Internal_Template $_smarty_tpl) {
+function content_697c8bfd5f43f5_13553122 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1131402845697746af77fc61_31409917', "content");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1846366879697c8bfd5dc2e6_97217996', "content");
 $_smarty_tpl->inheritance->endChild($_smarty_tpl, "layout.tpl");
 }
 /* {block "content"} */
-class Block_1131402845697746af77fc61_31409917 extends Smarty_Internal_Block
+class Block_1846366879697c8bfd5dc2e6_97217996 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_1131402845697746af77fc61_31409917',
+    0 => 'Block_1846366879697c8bfd5dc2e6_97217996',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -188,7 +188,7 @@ $_smarty_tpl->tpl_vars['creation']->do_else = false;
 ">
                         <input type="hidden" name="id" value="<?php echo $_smarty_tpl->tpl_vars['creation']->value['id'];?>
 ">
-                        <button type="submit" class="button small danger"
+                        <button type="submit" class="button small"
                         onclick="return confirm('Eliminare definitivamente questa creazione?');">
                             Elimina
                         </button>
